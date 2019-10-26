@@ -56,4 +56,44 @@
 # The first orange falls at position `15 + 5 = 20`.
 # The second orange falls at position `15 + -6 = 9`.
 # Only one fruit (the second apple) falls within the region between `7` and `11`, so we print `1` as our first line of output.
-# Only the second orange falls within the region between `7` and `11`, so we print `1` as our second line of output. 
+# Only the second orange falls within the region between `7` and `11`, so we print `1` as our second line of output.
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the countApplesAndOranges function below.
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    appleCount, orangeCount = 0, 0
+    for apple in apples:
+        if (apple > 0 and (a+apple >= s and a+apple <= t)):
+            appleCount += 1
+
+    for orange in oranges:
+        if (orange < 0 and (b+orange >= s and b+orange <= t)):
+            orangeCount += 1
+
+    print(appleCount)
+    print(orangeCount)
+
+if __name__ == '__main__':
+    st = input().split()
+    s = int(st[0])
+    t = int(st[1])
+
+    ab = input().split()
+    a = int(ab[0])
+    b = int(ab[1])
+
+    mn = input().split()
+    m = int(mn[0])
+    n = int(mn[1])
+
+    apples = list(map(int, input().rstrip().split()))
+    oranges = list(map(int, input().rstrip().split()))
+
+    countApplesAndOranges(s, t, a, b, apples, oranges)
