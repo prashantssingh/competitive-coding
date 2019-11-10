@@ -39,7 +39,6 @@
 #    \    /
 #     \/\/
 # He enters and leaves one valley.
-
 #!/bin/python3
 
 import math
@@ -50,6 +49,21 @@ import sys
 
 # Complete the countingValleys function below.
 def countingValleys(n, s):
+    valleyCount = 0
+    valleyEncountered = False
+    currentDepth = 0
+    hikeSteps = list(s)
+    for step in hikeSteps:
+        if (step == 'D'):
+            if (currentDepth == 0) and not valleyEncountered:
+                valleyEncountered = True
+                valleyCount += 1
+            currentDepth -= 1
+        else:
+            currentDepth += 1
+            if currentDepth == 0:
+                valleyEncountered = False
+    return valleyCount
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
