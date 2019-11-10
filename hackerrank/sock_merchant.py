@@ -41,6 +41,17 @@ import sys
 
 # Complete the sockMerchant function below.
 def sockMerchant(n, ar):
+    sockCount = 0
+    sockPairDict = dict()
+    for sock in ar:
+        if (sockPairDict.get(sock, 0) == 0):
+            sockPairDict[sock] = 1 
+        else:
+            sockPairDict[sock] = 0
+            sockCount += 1
+
+    return sockCount
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
