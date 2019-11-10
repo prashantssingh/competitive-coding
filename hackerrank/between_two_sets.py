@@ -62,8 +62,8 @@ if __name__ == '__main__':
     arr = list(map(int, input().rstrip().split()))
     brr = list(map(int, input().rstrip().split()))
 
-    total = getTotalX(arr, brr)
+    # total = getTotalX(arr, brr)
 
-    fptr.write(str(total) + '\n')
+    # fptr.write(str(total) + '\n')
 
     fptr.close()
