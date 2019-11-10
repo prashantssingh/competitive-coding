@@ -38,6 +38,7 @@
 # EXPLANATION:
 # The only thundercloud to avoid is `c[4]`. Emma can win the game in `3` jumps: `0->2->3->5`
 
+
 #!/bin/python3
 
 import math
@@ -48,6 +49,16 @@ import sys
 
 # Complete the jumpingOnClouds function below.
 def jumpingOnClouds(c):
+    jumps, step = 0, 0
+    while step < len(c)-1:
+        if (step+2 < len(c)) and (c[step+2] == 0):
+            step += 2
+            jumps += 1
+        else:
+            step += 1
+            jumps += 1
+
+    return jumps
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
