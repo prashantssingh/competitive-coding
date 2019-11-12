@@ -64,7 +64,6 @@ import sys
 
 def generateString(strPattern, length):
     quotient, remainder = divmod(length, len(strPattern))
-    print(strPattern*quotient + strPattern[:remainder])
     return strPattern*quotient + strPattern[:remainder]
 
 def getCharIndices(char, targetString):
