@@ -54,3 +54,36 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def generateString(strPattern, length):
+    quotient, remainder = divmod(length, len(strPattern))
+    print(strPattern*quotient + strPattern[:remainder])
+    return strPattern*quotient + strPattern[:remainder]
+
+def getCharIndices(char, targetString):
+    return [i for i, letter in enumerate(targetString) if letter == char]
+
+# Complete the repeatedString function below.
+def repeatedString(s, n):
+    char = 'a'
+    return len(getCharIndices(char, generateString(s, n)))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    n = int(input())
+
+    result = repeatedString(s, n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
