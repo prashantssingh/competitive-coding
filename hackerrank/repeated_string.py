@@ -70,7 +70,8 @@ def getCharIndices(char, targetString):
     return [i for i, letter in enumerate(targetString) if letter == char]
 
 # Another strategy:
-# Using counter, count the number of occurences of "a". 
+# Using counter from collection in python, count the number of occurences of "a". 
+# In case of string which only has "a", (len(collection) == 1), return the count(a) * repetition
 
 # Complete the repeatedString function below.
 def repeatedString(s, n):
