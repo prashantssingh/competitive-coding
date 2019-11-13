@@ -69,6 +69,9 @@ def generateString(strPattern, length):
 def getCharIndices(char, targetString):
     return [i for i, letter in enumerate(targetString) if letter == char]
 
+# Another strategy:
+# Using counter, count the number of occurences of "a". 
+
 # Complete the repeatedString function below.
 def repeatedString(s, n):
     char = 'a'
