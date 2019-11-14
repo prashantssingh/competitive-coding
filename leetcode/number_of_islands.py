@@ -36,3 +36,10 @@ class Solution:
                     islandMarker += 1
                     
         return abs(islandMarker+1)
+     
+# Above code is failing for below input:
+# 1  1  1
+# 0  1  0
+# 1  1  1
+
+# Optimisation: use recursive method to explore (up, right, bottom, right)
