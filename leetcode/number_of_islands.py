@@ -4,19 +4,19 @@
 # may assume all four edges of the grid are all surrounded by water.
 
 # EXAMPLE 1:
-# INPUT                                      OUTPUT:
-# 11110                                      1
-# 11010
-# 11000
-# 00000
+# INPUT                                               OUTPUT:
+# 1  1  1  1  0                                       1
+# 1  1  0  1  0
+# 1  1  0  0  0
+# 0  0  0  0  0
 
 
 # EXAMPLE 2:
-# INPUT                                      OUTPUT:
-# 11000                                       3
-# 11000
-# 00100
-# 00011
+# INPUT                                               OUTPUT:
+# 1  1  0  0  0                                       3
+# 1  1  0  0  0
+# 0  0  1  0  0
+# 0  0  0  1  1
 
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
