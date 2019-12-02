@@ -15,4 +15,14 @@
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        pass
+        nums.sort()
+        solnSet = set()
+        for i in range(len(nums)):
+            target = 0 - nums[i]
+            j, k = i+1, len(nums)-1
+            while j < k:
+                if nums[j] + nums[k] == target: solnSet.add(tuple([nums[i], nums[j], nums[k]])); j+=1; k-=1
+                elif nums[j] + nums[k] < target: j+=1
+                else: k-=1              
+                    
+        return solnSet
