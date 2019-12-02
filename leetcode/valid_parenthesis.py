@@ -26,4 +26,28 @@
 # "{[]}"                                              true
 
 class Solution:
-    pass
+    def isValid(self, s: str) -> bool:
+        if not s:
+            return True
+        
+        parenDict =  {
+            ']': '[',
+            '}': '{',
+            ')': '('
+        }
+        
+        stack = list()
+        for char in s:
+            # print(char, stack)
+            if char in parenDict.keys():
+                if not stack:
+                    return False
+                elif parenDict[char] is not stack.pop():
+                    return False
+            else:
+                stack.append(char)
+        
+        if stack:
+            return False
+        
+        return True
