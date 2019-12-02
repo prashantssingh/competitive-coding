@@ -24,3 +24,6 @@
 
 # INPUT                                               OUTPUT:
 # "{[]}"                                              true
+
+class Solution:
+    pass
