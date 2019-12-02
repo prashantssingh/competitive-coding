@@ -9,7 +9,6 @@
 
 
 # EXAMPLES:
-
 # INPUT                                               OUTPUT:
 # "()"                                                true
 
