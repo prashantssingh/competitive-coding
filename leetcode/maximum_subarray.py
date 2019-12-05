@@ -12,3 +12,12 @@
 # FOLLOW UP:
 # If you have figured out the O(n) solution, try coding another solution using the divide and conquer 
 # approach, which is more subtle.
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        dp_sum = [0]*len(nums)
+        dp_sum[0] = nums[0]
+        for i in range(1, len(nums)):
+            dp_sum[i] = max(nums[i], nums[i]+dp_sum[i-1])
+            
+        return max(dp_sum)
