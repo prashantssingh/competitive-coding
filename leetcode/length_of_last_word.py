@@ -9,3 +9,11 @@
 # EXAMPLE
 # INPUT                                         OUTPUT
 # "Hello World"                                 5
+
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        if not s: return 0
+        
+        split_s = s.split()
+        if len(split_s) < 1: return 0
+        else: return len(split_s[len(split_s)-1])
