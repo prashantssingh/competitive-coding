@@ -21,15 +21,27 @@
 # FOLLOW UP:
 # Coud you solve it without converting the integer to a string?
 
+# class Solution:
+#     def isPalindrome(self, x: int) -> bool:
+#         x = str(x)
+#         i, j = 0, len(x)-1
+#         while i < j:
+#             # print(f"i: {i}--{x[i]}  ||||   j: {j}--{x[j]}")
+#             if x[i] != x[j]:
+#                 return False
+#             i += 1
+#             j -= 1
+            
+#         return True
+
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        x = str(x)
-        i, j = 0, len(x)-1
-        while i < j:
-            # print(f"i: {i}--{x[i]}  ||||   j: {j}--{x[j]}")
-            if x[i] != x[j]:
-                return False
-            i += 1
-            j -= 1
-            
-        return True
+        if x < 0 or (x % 10 == 0 and x != 0):
+            return False
+    
+        inverted_num = 0
+        while x > inverted_num:
+            inverted_num = inverted_num * 10 + x % 10
+            x //= 10
+                        
+        return (x == inverted_num or x == inverted_num//10)
