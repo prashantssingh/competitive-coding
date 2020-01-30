@@ -31,3 +31,7 @@ class Solution:
             num += 1
             
         return len(primes_list)
+
+
+# NOTE: This solution takes a very long execution time for very number as input. To optimise this use `Sieve of Eratosthenes`
+# REFER: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
