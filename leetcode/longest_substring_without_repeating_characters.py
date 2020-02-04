@@ -18,19 +18,18 @@
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        if not s: return 0
+        
+        i = j = max_len = 0
         seen_set = set()
-        res = curr_str = ''
-        for c in s:
-            if c not in seen_set:
-                print(c)
-                seen_set.add(c)
-                curr_str += c
-                if len(curr_str) > len(res):
-                    res = curr_str
+        while j < len(s):
+            if s[j] not in seen_set:
+                seen_set.add(s[j])
+                j += 1
+                max_len = max(len(seen_set), max_len)
             else:
-                print(seen_set)
-                seen_set.clear()
-                curr_str = c
-                seen_set.add(c)
-                
-        return len(res)
+                seen_set.remove(s[i])
+                i += 1
+        
+        return max_len
+        
