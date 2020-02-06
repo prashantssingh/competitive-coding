@@ -20,3 +20,15 @@
  
 
 # NOTE: 0 ≤ N ≤ 30.
+
+class Solution:
+    def fib(self, N: int) -> int:
+        if not N: return 0
+        if N in (1,2): return 1
+        
+        fNum, sNum, val = (0, 1, 0)
+        for i in range(2, N+1):
+            val = fNum + sNum
+            fNum, sNum = sNum, val
+            
+        return val
