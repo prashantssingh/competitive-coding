@@ -28,3 +28,30 @@
 # "licensePlate" will contain digits, spaces, or letters (uppercase or lowercase).
 # words will have a length in the range [10, 1000].
 # Every words[i] will consist of lowercase letters, and have length in range [1, 15].
+
+
+from collections import Counter
+
+class Solution:
+    def shortestCompletingWord(self, licensePlate: str, words: List[str]) -> str:
+        res, res_len = "", 1000
+        lp = licensePlate.lower()
+        
+        for word in words:
+            found = True
+            word_counter = Counter(word)
+            for i in lp:
+                if i.isalpha():
+                    if i in word_counter and word_counter[i] != 0:
+                        word_counter[i] -= 1
+                    else:
+                        found = False
+                        break
+
+            if found and res_len > len(word):
+                res = word
+                res_len = len(word)
+                
+        return res
+            
+        
