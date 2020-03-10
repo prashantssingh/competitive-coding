@@ -13,3 +13,13 @@
 # INPUT:                                                       OUTPUT:
 # [1,1,1,3,3,4,3,2,4,2]                                        true
 
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:        
+        nums_set = set()
+        for num in nums:
+            if num in nums_set:
+                return True
+            
+            nums_set.add(num)
+            
+        return False
