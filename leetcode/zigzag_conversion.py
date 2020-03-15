@@ -36,6 +36,8 @@ class Solution:
                 result[ind] += char     
                 if ind <= 0: 
                     invert = not invert
+                    # increment the index because you have crossed over to -1
+                    # bring it back to 0 (lower boundary)
                     ind += 1
                     
             else:
@@ -43,6 +45,7 @@ class Solution:
                 ind +=1
                 if ind >= numRows: 
                     invert = not invert
+                    # same as above adjustment, decrement index to numRows-1 (actual len of array)
                     ind -= 1
                     
         res = ""
