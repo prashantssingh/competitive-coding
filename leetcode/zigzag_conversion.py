@@ -23,3 +23,30 @@
 # Y A   H R
 # P     I
 
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        if not s: return ""
+        
+        result = [''] * numRows
+        invert = False
+        ind = 0
+        for char in s:
+            if invert:
+                ind -= 1
+                result[ind] += char     
+                if ind <= 0: 
+                    invert = not invert
+                    ind += 1
+                    
+            else:
+                result[ind] += char
+                ind +=1
+                if ind >= numRows: 
+                    invert = not invert
+                    ind -= 1
+                    
+        res = ""
+        for i in range(len(result)):
+            res += result[i]
+            
+        return res
