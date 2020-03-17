@@ -27,3 +27,21 @@
 # 1 <= instructions.length <= 100
 # instructions[i] is in {'G', 'L', 'R'}
 # 
+
+class Solution:
+    def isRobotBounded(self, instructions: str) -> bool:
+        # after moving right, left, down, up, respectively
+        direction = ((1,0), (0,-1), (-1,0), (0,1))
+
+        x, y, i = 0, 0, 0
+
+        for inst in instructions:
+            if inst == "R":
+                i = (i + 1) % 4
+            elif inst == "L":
+                i = (4 + i - 1) % 4
+            else:
+                x += direction[i][0]
+                y += direction[i][1]
+                
+        return (x == 0 and y == 0) or i > 0
