@@ -25,13 +25,13 @@ class Solution:
     def arrangeCoins(self, n: int) -> int:
         left, right = 0, n
         while left <= right:
-            k = (left + right) // 2
-            curr = k * (k + 1) // 2
+            mid = (left + right) // 2
+            curr = mid * (mid + 1) // 2
             if curr == n:
-                return k
+                return mid
             if curr > n:
-                right = k-1
+                right = mid-1
             else:
-                left = k+1
+                left = mid+1
 
         return right
