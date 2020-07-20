@@ -5,9 +5,6 @@
 # NOTE
 # The solution set must not contain duplicate triplets.
 
-# Example:
-
-
 # EXAMPLES:
 # Given array nums = ,
 # INPUT                                               OUTPUT:
