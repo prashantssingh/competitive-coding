@@ -10,3 +10,17 @@
 # s = "loveleetcode"                                   2
 #  
 # Note: You may assume the string contains only lowercase English letters.
+
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        s_dict = dict()
+        for char in s:
+            s_dict[char] = s_dict.get(char, 0) + 1
+        
+        for i in range(len(s)):
+            if s_dict[s[i]] == 1:
+                return i
+            
+        return -1
+                
+                
