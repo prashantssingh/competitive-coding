@@ -10,7 +10,6 @@
 # "bbbbb"                                                 1
 # EXPLANATION - The answer is "b", with the length of 1.
 # 
-# 
 # Input:                                                  Output:
 # "pwwkew"                                                3 
 # EXPLANATION - The answer is "wke", with the length of 3. 
