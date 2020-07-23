@@ -32,3 +32,27 @@ class Solution:
         
         return max_len
         
+
+# class Solution:
+#     def lengthOfLongestSubstring(self, s: str) -> int:
+#         if not s:
+#             return 0
+#        
+#         if len(s) == 1:
+#             return 1
+#        
+#         seen_set = set(s[0])
+#         substr_len = 0
+#        
+#         i, j = 0, 1
+#         while j < len(s):
+#             if s[j] in seen_set:
+#                 seen_set.remove(s[i])
+#                 i += 1
+#             else: 
+#                 seen_set.add(s[j])
+#                 j += 1
+#                
+#             substr_len = max(substr_len, len(seen_set))
+# 
+#         return substr_len
