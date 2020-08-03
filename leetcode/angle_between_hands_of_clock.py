@@ -28,36 +28,36 @@
 # 0 <= minutes <= 59
 # Answers within 10^-5 of the actual value will be accepted as correct.
 
-# class Solution:
-#     def angleClock(self, hour: int, minutes: int) -> float:
-#         right_pie_hour = hour * 30 % 360
-#         left_pie_hour = (12-hour) * 30 % 360
-#         print(f'right hand pie: {right_pie_hour}, left hand pie: {left_pie_hour}') 
-        
-#         minute_hand_angle = minutes * 6
-#         print("minute hand:", minute_hand_angle)
-#         adjustment = (30 / 12) * (minutes / 5)
-#         print('adjustment:', adjustment)
-        
-#         right_pie = abs(right_pie_hour - minute_hand_angle + adjustment)
-#         left_pie = abs(left_pie_hour + minute_hand_angle) - adjustment)
-#         print(f'right pie: {right_pie}, left hand pie: {left_pie}')
-        
-#         return min(right_pie, left_pie)
-
 class Solution:
     def angleClock(self, hour: int, minutes: int) -> float:
-        min_hand = minutes / 5
-        hand_diff = hour - min_hand
-        crossed = False
+        right_pie_hour = hour * 30 % 360
+        left_pie_hour = (12-hour) * 30 % 360
+        print(f'right hand pie: {right_pie_hour}, left hand pie: {left_pie_hour}') 
+        
+        minute_hand_angle = minutes * 6
+        print("minute hand:", minute_hand_angle)
+        adjustment = (30 / 12) * (minutes / 5)
+        print('adjustment:', adjustment)
+        
+        right_pie = abs(right_pie_hour - minute_hand_angle) + adjustment
+        left_pie = abs(left_pie_hour + minute_hand_angle) - adjustment)
+        print(f'right pie: {right_pie}, left hand pie: {left_pie}')
+        
+        return min(right_pie, left_pie)
 
-        if hand_diff < 0:
-            hand_diff = abs(hand_diff)
-            crossed = True
+# class Solution:
+#     def angleClock(self, hour: int, minutes: int) -> float:
+#         min_hand = minutes / 5
+#         hand_diff = hour - min_hand
+#         crossed = False
 
-        angle = hand_diff * 30
-        adjustment = (30 / 12) * min_hand
+#         if hand_diff < 0:
+#             hand_diff = abs(hand_diff)
+#             crossed = True
 
-        angle = (angle-adjustment) if crossed else (angle+adjustment)
+#         angle = hand_diff * 30
+#         adjustment = (30 / 12) * min_hand
 
-        return min(angle, 360-angle)
+#         angle = (angle-adjustment) if crossed else (angle+adjustment)
+
+#         return min(angle, 360-angle)
