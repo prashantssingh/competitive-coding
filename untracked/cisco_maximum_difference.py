@@ -1,3 +1,8 @@
+# PROBLEM DESCRIPTION:
+# Given an array arr[] of integers, find out the maximum difference between any two elements such 
+# that larger element appears after the smaller number.
+# GeeksForGeeks link: https://www.geeksforgeeks.org/maximum-difference-between-two-elements/
+
 def max_difference(arr):
     min_arr = arr.copy()
     for i in range(1, len(arr)):
